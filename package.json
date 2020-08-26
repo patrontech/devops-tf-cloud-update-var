@@ -1,0 +1,24 @@
+{
+  "name": "run-terraform",
+  "version": "1.0.0",
+  "description": "Calls Terraform API to execute a run",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarathkrish/run-terraform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarathkrish/run-terraform/issues"
+  },
+  "homepage": "https://github.com/sarathkrish/run-terraform#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "axios": "^0.19.2"
+  }
+}

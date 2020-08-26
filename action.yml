@@ -1,0 +1,31 @@
+name: 'Run Terraform'
+description: 'Invoke Terraform API to run Terraform'
+inputs:
+  workSpaceName:
+    description: 'Terraform workspace name'
+    required: true
+  organizationName:
+    description: 'Terraform organization Name'
+    required: true
+  terraformToken:
+    description: 'Terraform Token'
+    required: true
+  terraformHost:
+    description: 'Terraform Host Name'
+    required: true
+  variableName:
+    description: 'The variable key / name as shown in Terraform Cloud'
+    required: true
+  variableValue:
+    description: 'The variable value to be replaced in Terraform Cloud'
+    required: true
+outputs:
+  variableId:
+    description: 'The Updated Variable ID'
+runs:
+  using: 'node12'
+  main: 'index.js'
+
+branding:
+  icon: 'play'  
+  color: 'green'
