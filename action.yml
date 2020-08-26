@@ -1,5 +1,5 @@
-name: 'Run Terraform'
-description: 'Invoke Terraform API to run Terraform'
+name: 'Update Terraform Cloud Variable'
+description: 'Invoke Terraform API to update Terraform variable value'
 inputs:
   workSpaceName:
     description: 'Terraform workspace name'
