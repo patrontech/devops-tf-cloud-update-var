@@ -11,7 +11,11 @@ async function main() {
         const terraformHost = core.getInput('terraformHost');
         const variableValue = core.getInput('variableValue');
         const variableName = core.getInput('variableName');
+        let variableHCL = core.getInput('variableHCL');
 
+        if (variableHCL !== 'true'){
+            variableHCL = 'false';
+        }
 
         const options = {
             headers: {'Content-Type': 'application/vnd.api+json',
@@ -46,7 +50,10 @@ async function main() {
         const terraformVariableUpdateEndpoint = "https://"+terraformHost+"/api/v2/vars/"+variableId;
         let request = { data : {
                 id: variableId,
-                attributes: { "value" : variableValue },
+                attributes: {
+                    "value" : variableValue,
+                    "hcl" : variableHCL
+                },
                 type: "vars",
             }};
         console.log("run request:" + JSON.stringify(request));

@@ -16,6 +16,9 @@ inputs:
   variableName:
     description: 'The variable key / name as shown in Terraform Cloud'
     required: true
+  variableHCL:
+    description: 'Specify true or false if variable should be in HCL format'
+    required: false
   variableValue:
     description: 'The variable value to be replaced in Terraform Cloud'
     required: true
