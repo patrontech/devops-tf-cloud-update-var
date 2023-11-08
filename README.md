@@ -55,7 +55,7 @@ env:
   CONFIG_DIRECTORY: "./terraform"
   TF_HOST: "app.terraform.io"
 
-job: 
+jobs: 
  update-tf-vars:
   name: Update tf cloud vars
   runs-on: ubuntu-latest
