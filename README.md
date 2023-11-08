@@ -40,6 +40,14 @@ It borrows heavily from the work done by https://github.com/sarathkrish/invoke-t
 ## Example usage
 
 ```
+name: Update tf vars
+on: 
+  workflow_dispatch:
+    inputs:
+      var:
+        description: 'My Awesome Var'
+        required: true
+
 env:
   TF_CLOUD_ORGANIZATION: "MyAwesomeOrg"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
