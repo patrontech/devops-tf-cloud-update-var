@@ -40,12 +40,25 @@ It borrows heavily from the work done by https://github.com/sarathkrish/invoke-t
 ## Example usage
 
 ```
-uses: patrontech/devops-tf-cloud-update@v1.0   
-with:  
-  workSpaceName: MyTestWorkspace  
-  organizationName: {{env.organization}}  
-  terraformToken: {{secrets.Terraform_Token}}
-  terraformHost: 'app.terraform.io'
-  variableName: 'container_tag'
-  variableValue: 'v1.1.1'
+env:
+  TF_CLOUD_ORGANIZATION: "MyAwesomeOrg"
+  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
+  TF_WORKSPACE: "MyAwesomeWorkspace"
+  CONFIG_DIRECTORY: "./terraform"
+  TF_HOST: "app.terraform.io"
+
+job: 
+ update-tf-vars:
+  name: Update tf cloud vars
+  runs-on: ubuntu-latest
+  steps:
+   - uses: patrontech/devops-tf-cloud-update-var@v1.0.1
+     with:  
+      workSpaceName: ${{env.TF_WORKSPACE}} 
+      organizationName: ${{env.TF_CLOUD_ORGANIZATION}}
+      terraformToken: ${{env.TF_API_TOKEN}}
+      terraformHost: ${{env.TF_HOST}}
+      variableName: 'MyAwesomeVar'
+      variableValue: ${{ inputs.var }}
+
 ```
